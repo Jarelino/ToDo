@@ -15,6 +15,26 @@ class View extends EventEmitter {
         this.form.addEventListener('submit', this.handleAdd.bind(this));
     }
 
+    showMain() {
+        document.getElementsByTagName('main')[0].style.display = 'block';
+    }
+
+    hideLoginForm() {
+        document.getElementById('login-form').style.display = 'none';
+    }
+
+    showLoginForm() {
+        document.getElementById('login-form').style.display = 'flex';
+    }
+
+    hideCodeForm() {
+        document.getElementById('login-verification').style.display = 'none';
+    }
+
+    showCodeForm() {
+        document.getElementById('login-verification').style.display = 'flex';
+    }
+
     loginSubmit() {
         this.emit('number-submit', {});
     }

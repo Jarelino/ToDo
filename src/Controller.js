@@ -36,12 +36,6 @@ class Controller {
         view.on('remove', this.removeTodo.bind(this));
         view.on('number-submit', this.auth.bind(this));
 
-
-        //document.getElementById('verification-submit').addEventListener('click', this.codeVerification.bind(this));
-    }
-
-    codeVerification() {
-
     }
 
     auth() {
@@ -49,18 +43,19 @@ class Controller {
         const appVerifier = window.recaptchaVerifier;
 
         this.firebase.auth().signInWithPhoneNumber(phone, appVerifier).then((confirmationResult) => {
-            const code = document.getElementById('login-code');
-
-            document.getElementById('verification-submit').onclick(() => {
-                confirmationResult.confirm(code).then(function (result) {
-                    // User signed in successfully.
-                    this.user = result.user;
-                    // ...
-                });
+            
+            document.getElementById('verification-submit').addEventListener('click', () => {
+                const code = document.getElementById('login-code').value;
+                confirmationResult.confirm(code);
+                this.user = phone;
+                this.view.hideCodeForm();
+                this.view.showMain();
             })
+            
         });
-
-        return;
+        
+        this.view.hideLoginForm();
+        this.view.showCodeForm();
     }
 
     render() {

@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: #fafafa;
   color: #757575;
@@ -60,6 +65,7 @@ input {
 }
 
 main {
+  display: none;
   background: #fff;
   max-width: 700px;
   margin: 70px auto;
@@ -134,4 +140,36 @@ main {
 
 #todo-form button {
   margin-left: 10px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login-verification {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 5px 0;
+}
+
+.login-submit {
+  width: 100%;
+  margin: 10px 0 0 0;
 }
