@@ -62,6 +62,7 @@ class Controller {
     render() {
         this.db.collection(this.user).get().then((docs) => {
             docs.forEach(element => {
+                this.model.addItem(element.data());
                 this.view.addItem(element.data());
             });
         })
