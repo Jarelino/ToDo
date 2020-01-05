@@ -50,6 +50,7 @@ class Controller {
                 this.user = phone;
                 this.view.hideCodeForm();
                 this.view.showMain();
+                this.render();
             })
             
         });
