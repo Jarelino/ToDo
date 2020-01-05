@@ -1,0 +1,137 @@
+body {
+  background-color: #fafafa;
+  color: #757575;
+  font-family: 'Consolas', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 1em;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: rgba(158,158,158,.2);
+}
+
+button:active {
+  background-color: rgba(158,158,158,.4);
+}
+
+button.icon {
+  border-radius: 50%;
+  font-size: 24px;
+  height: 32px;
+  margin-left: 0;
+  margin-right: 0;
+  min-width: 32px;
+  width: 32px;
+  padding: 0;
+  overflow: hidden;
+  line-height: normal;
+}
+
+button .material-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-12px,-12px);
+  line-height: 24px;
+  width: 24px;
+  vertical-align: middle;
+}
+
+input {
+  font-family: 'Consolas', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #757575;
+  padding: .5em;
+  border-radius: 2px;
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+main {
+  background: #fff;
+  max-width: 700px;
+  margin: 70px auto;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.todo-item {
+  display: flex;
+  font-size: 1rem;
+  border-top: 1px solid rgba(0,0,0,.1);
+  background-color: #fff;
+  transition: all .2s;
+  -webkit-user-select: none;
+  user-select: none;
+  padding: 1em;
+  align-items: center;
+}
+
+.todo-item.completed * {
+  color: lightgray;
+}
+
+.todo-item .checkbox {
+  margin-right: .5rem;
+}
+
+.todo-item .title,
+.todo-item .textfield {
+  margin-right: auto;
+}
+
+.todo-item .textfield {
+  display: none;
+}
+
+.todo-item.completed .title {
+  text-decoration: line-through;
+}
+
+.todo-item.editing .checkbox,
+.todo-item.editing .title {
+  display: none;
+}
+
+.todo-item.editing .textfield {
+  display: block;
+  flex: 1;
+  margin-right: 16px;
+}
+
+.todo-item button {
+  opacity: 0;
+  transition: all .2s;
+}
+
+.todo-item:hover button:not(.checkbox) {
+  opacity: 1;
+}
+
+#todo-form {
+  display: flex;
+  background-color: #FAFAFA;
+  padding: 10px;
+}
+
+#todo-form input {
+  flex: 1;
+  outline: none;
+  transition: all .2s;
+}
+
+#todo-form button {
+  margin-left: 10px;
+}

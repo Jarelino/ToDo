@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <title>ToDo list</title>
+        <link rel="stylesheet" href="./app.css">
+    </head>
+
+    <body>
+        <main id="app">
+
+            <ul id="todo-list">
+            </ul>
+
+            <form id="todo-form">
+                <input id="add-input" type="text">
+                <button id="add-button" type="submit">Добавить</button>
+            </form>
+        </main>
+
+        <div id="login-form">
+            <input type="tel" id='login-input'>
+            <div id="recaptcha-container"></div>
+            <button type="submit" id="login-submit">Login</button>
+        </div>
+
+        <div class="login-verification">
+            <input type="text" id="login-code">
+            <button id="verification-submit">Click</button>
+        </div>
+
+
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-firestore.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
